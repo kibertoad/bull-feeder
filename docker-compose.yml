@@ -1,0 +1,22 @@
+services:
+  redis:
+    image: redis:7.2-rc2-alpine3.18
+    command: redis-server --requirepass sOmE_sEcUrE_pAsS
+    ports:
+      - ${DOCKER_REDIS_PORT:-6379}:6379
+    volumes:
+      - redis_data:/redis/data:cached
+
+  rabbitmq:
+    image: rabbitmq:3.10.23-alpine
+    ports:
+      - ${DOCKER_RABBITMQ_CLIENT_PORT:-5672}:5672
+      - ${DOCKER_RABBITMQ_MANAGEMENT_PORT:-15672}:15672
+    volumes:
+      - rabbit_data:/var/lib/rabbitmq
+
+volumes:
+  redis_data:
+    driver: local
+  rabbit_data:
+    driver: local
