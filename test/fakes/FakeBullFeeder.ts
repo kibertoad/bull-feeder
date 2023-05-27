@@ -1,5 +1,5 @@
-import type { JobOptions } from '../lib/BullFeeder'
-import { BullFeeder } from '../lib/BullFeeder'
+import type { JobOptions } from '../../lib/BullFeeder'
+import { BullFeeder } from '../../lib/BullFeeder'
 
 export class FakeBullFeeder extends BullFeeder {
   public taskCounter = 0

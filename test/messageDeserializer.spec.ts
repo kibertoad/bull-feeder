@@ -1,8 +1,8 @@
 import type { Message } from 'amqplib'
 import { z } from 'zod'
 
-import { ConsumerErrorResolver } from './ConsumerErrorResolver'
-import { deserializeMessage } from './messageDeserializer'
+import { ConsumerErrorResolver } from '../lib/amqp/ConsumerErrorResolver'
+import { deserializeMessage } from '../lib/amqp/messageDeserializer'
 
 export const PERMISSIONS_MESSAGE_SCHEMA = z.object({
   messageType: z.enum(['add', 'remove']),

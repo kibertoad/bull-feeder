@@ -5,7 +5,7 @@ import { z } from 'zod'
 
 import { RabbitmqTaskInputSource } from '../lib/amqp/RabbitmqTaskInputSource'
 
-import { FakeBullFeeder } from './FakeBullFeeder'
+import { FakeBullFeeder } from './fakes/FakeBullFeeder'
 import { redisOptions } from './utils/TestRedisConfig'
 import { resolveAmqpConnection } from './utils/amqpConnectionResolver'
 import { buildQueueMessage } from './utils/queueUtils'
